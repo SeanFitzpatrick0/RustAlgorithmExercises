@@ -2,7 +2,7 @@ use ordered_float::NotNan;
 use std::cmp::Ordering;
 use std::collections::BinaryHeap;
 
-/// A point in a 2D co-ordinite plane
+/// A point in a 2D coordinate plane
 #[derive(Debug, Eq, PartialEq)]
 pub struct Point(pub i64, pub i64);
 
@@ -16,7 +16,7 @@ impl Point {
     }
 }
 
-/// Util struct that associates a Point with it's distannce to the origin
+/// Util struct that associates a Point with it's distance to the origin
 #[derive(Debug, Eq, PartialEq)]
 struct PointDistance<'a> {
     point: &'a Point,
@@ -63,7 +63,7 @@ pub fn get_k_nearest_points<'a>(
 ) -> Vec<&'a Point> {
     if k > points.len() {
         // Validate that there are enough points to satisfy the query
-        panic!("Not enough points, k = {k}, lenght = {}", points.len());
+        panic!("Not enough points, k = {k}, length = {}", points.len());
     }
 
     // Gether the point distances into a Binary Heap
